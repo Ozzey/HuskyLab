@@ -1,0 +1,1 @@
+This is a simple example on how can we train an agent to move the articulations of the ur5 to reach an end effector goal

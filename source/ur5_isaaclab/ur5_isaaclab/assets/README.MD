@@ -1,0 +1,6 @@
+The assests shown in this section are used by the different scripts.
+Note that the assets are Universal Description Files, USD has 3 main type of files, .usd, usdz and usda.
+The difference between this is that .usd is the standard file, where the main model characteristics are stored inside the file, though much of the meshes are other parameters are only referenced inside this file to another file created automatically. So if you move the file from one place to another probably the file will be corrupted given this external dependencies. The other file type we use is .usdz, in theory this file contains all dependencies needed for the mode, thus is much bigger. As of time of writting this was the best option to store the robot model.
+The third type of file .usda in theory is a kind of file that is plane text but we didn't used it.
+
+For the rest of the objects that are not the robot where taken from the Omniverse library and added physics and colliders in order to work in simulation. This objects can be easily recover from there or straight from the YCB object dataset if other type of file is needed. https://www.ycbbenchmarks.com/

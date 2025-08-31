@@ -1,14 +1,10 @@
-# Template for Isaac Lab Projects
+# HUSKYLAB
 
 ## Overview
 
 This project/repository serves as a template for building projects or extensions based on Isaac Lab.
-It allows you to develop in an isolated environment, outside of the core Isaac Lab repository.
 
-**Key Features:**
 
-- `Isolation` Work outside the core Isaac Lab repository, ensuring that your development efforts remain self-contained.
-- `Flexibility` This template is set up to allow your code to be run as an extension in Omniverse.
 
 **Keywords:** extension, template, isaaclab
 
@@ -60,6 +56,17 @@ It allows you to develop in an isolated environment, outside of the core Isaac L
             # use 'FULL_PATH_TO_isaaclab.sh|bat -p' instead of 'python' if Isaac Lab is not installed in Python venv or conda
             python scripts/random_agent.py --task=<TASK_NAME>
             ```
+            
+        - Camera Tasks
+            ```
+            python scripts/rl_games/train.py --task=Isaac-LiftCube-RGB-v0 --headless --enable_cameras --num_envs=4096 
+            # Decrease the number of envs if your GPU doesn't have enough memory.
+            ```
+
+### Assets
+
+Download the assets from [here](https://disk.360.yandex.ru/client/disk/HuskyLab) and copy them to ```HuskyLab/assets```
+
 
 ### Set up IDE (Optional)
 

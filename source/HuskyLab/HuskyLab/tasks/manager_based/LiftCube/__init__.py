@@ -86,3 +86,30 @@ gym.register(
     disable_env_checker=True,
 )
 
+
+
+
+##
+# CAMERA 
+##
+
+gym.register(
+    id="Isaac-LiftCube-RGB-v0",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
+    disable_env_checker=True,
+    kwargs={
+        "env_cfg_entry_point": f"{__name__}.joint_pos_env_camera_cfg:LiftCubeRGBCameraEnvCfg",
+        "rl_games_cfg_entry_point": f"{agents.__name__}:rl_games_camera_ppo_cfg.yaml",
+    },
+)
+
+
+gym.register(
+    id="Isaac-LiftCube-RGB-ResNet18-v0",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
+    disable_env_checker=True,
+    kwargs={
+        "env_cfg_entry_point": f"{__name__}.joint_pos_env_camera_cfg:LiftCubeResNet18CameraEnvCfg",
+        "rl_games_cfg_entry_point": f"{agents.__name__}:rl_games_camera_ppo_cfg.yaml",
+    },
+)

@@ -27,6 +27,8 @@ from HuskyLab.tasks.manager_based.LiftCube.lift_env_cfg import LiftEnvCfg
 
 import isaaclab.sim as sim_utils
 from isaaclab.sensors import TiledCameraCfg, CameraCfg
+from HuskyLab import package_root
+
 
 @configclass
 class UR5CubeLiftEnvCfg(LiftEnvCfg):
@@ -65,6 +67,7 @@ class UR5CubeLiftEnvCfg(LiftEnvCfg):
         )
 
         self.commands.object_pose.body_name = "gripper_link" 
+        self.commands.object_pose.debug_vis = False
 
         self.scene.object = RigidObjectCfg(
             prim_path="{ENV_REGEX_NS}/Object",
@@ -85,6 +88,8 @@ class UR5CubeLiftEnvCfg(LiftEnvCfg):
                 ),
             ),
         )
+
+
 
         marker_cfg = FRAME_MARKER_CFG.copy()
         marker_cfg.markers["frame"].scale = (0.1, 0.1, 0.1)

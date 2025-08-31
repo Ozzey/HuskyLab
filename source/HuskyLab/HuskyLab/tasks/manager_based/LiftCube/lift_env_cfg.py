@@ -27,20 +27,8 @@ class ObjectTableSceneCfg(InteractiveSceneCfg):
     robot: ArticulationCfg = MISSING
     ee_frame: FrameTransformerCfg = MISSING
     object: RigidObjectCfg | DeformableObjectCfg = MISSING
-    # camera: CameraCfg = MISSING
 
-    # camera = TiledCameraCfg(
-    #             prim_path="{ENV_REGEX_NS}/Robot/wrist_3_link/ee_link/front_cam",
-    #             update_period=0.01,
-    #             height=64,
-    #             width=64,
-    #             data_types=["rgb"],
-    #             spawn=sim_utils.PinholeCameraCfg(
-    #                 focal_length=24.0, focus_distance=400.0, horizontal_aperture=20.955, clipping_range=(0.1, 20)
-    #             ),
-    #             offset=TiledCameraCfg.OffsetCfg(pos=(0.05, 0.0, -0.05), rot=( 0.7059418, -0.0353547, 0.0353265, 0.7065042 ), convention="ros"),
-    #         )
-
+    
     table = AssetBaseCfg(
         prim_path="{ENV_REGEX_NS}/Table",
         init_state=AssetBaseCfg.InitialStateCfg(pos=[0.5, 0, -0.63]),

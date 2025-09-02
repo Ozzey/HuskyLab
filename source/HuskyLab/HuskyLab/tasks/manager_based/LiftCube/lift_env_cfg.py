@@ -83,6 +83,8 @@ class ObservationsCfg:
         object_position = ObsTerm(func=mdp.object_position_in_robot_root_frame)
         target_object_position = ObsTerm(func=mdp.generated_commands, params={"command_name": "object_pose"})
         actions = ObsTerm(func=mdp.last_action)
+        # precomputed graph embedding from pickle(s) - shape (num_envs, 32)
+        graph_embedding = ObsTerm(func=mdp.scene_graph_embedding_from_pickle, params={"scene_file": "<path/to/scene_pickles_or_file>", "embed_dim": 32})
 
         def __post_init__(self):
             self.enable_corruption = True
